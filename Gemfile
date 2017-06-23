@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
 
+gem 'bcrypt'
+
 gem 'bootstrap-sass', '3.3.7'
 
 # Use SCSS for stylesheets
