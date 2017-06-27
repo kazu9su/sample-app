@@ -15,4 +15,17 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select 'div.alert'
     assert_select 'div.alert-danger'
   end
+
+  test "valid signup information" do
+    get signup_path
+    assert_difference 'User.count', 1 do
+      post users_path, user: { name: "Example User",
+                               email: "example@railstutorial.org",
+                               password: "foobar",
+                               password_confirmation: "foobar" }
+    end
+    follow_redirect!
+    assert_template 'users/show'
+    assert_not flash.empty?
+  end
 end
