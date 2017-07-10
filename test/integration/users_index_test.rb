@@ -29,4 +29,16 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     get users_path
     assert_select 'a', text: 'delete', count: 0
   end
+
+  test "index when user signed up but non-activated" do
+    get signup_path
+    post users_path, user: { name: "Example User",
+                             email: "example@railstutorial.org",
+                             password: "foobar",
+                             password_confirmation: "foobar" }
+
+    log_in_as(@admin)
+    get users_path
+    assert_select 'img.gravatar', count: 30
+  end
 end

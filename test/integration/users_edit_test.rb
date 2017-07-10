@@ -36,4 +36,14 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal name, @user.name
     assert_equal email, @user.email
   end
+
+  test "redirect to root url when user is not activated" do
+    get signup_path
+    post users_path, user: { name: "Example User",
+                             email: "example@railstutorial.org",
+                             password: "foobar",
+                             password_confirmation: "foobar" }
+    get edit_user_path(@user)
+    follow_redirect!
+  end
 end
