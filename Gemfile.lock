@@ -43,6 +43,8 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootsnap (1.1.2)
+      msgpack (~> 1.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -256,6 +258,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    msgpack (1.1.0)
     multi_json (1.12.1)
     nenv (0.3.0)
     nokogiri (1.8.0)
@@ -364,6 +367,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  bootsnap
   bootstrap-sass (= 3.3.7)
   bootstrap-will_paginate
   byebug (= 9.0.6)
